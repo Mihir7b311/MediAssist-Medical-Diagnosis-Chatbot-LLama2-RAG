@@ -14,7 +14,7 @@ embedding_model = download_hugging_face_embeddings()
 
 
 pc = Pinecone(api_key=PINECONE_API_KEY)  
-index_name="medical-chatbot"
+index_name="medical-chatbot"                          ##data is already stored in my API key so you can comment on this code 
 index = pc.Index(index_name)  
 for i, t in zip(range(len(text_chunks)), text_chunks):
    query_result = embedding_model.embed_query(t.page_content)
